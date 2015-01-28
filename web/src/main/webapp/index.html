@@ -12,6 +12,12 @@
 	<div class="jumbotron" ng-controller="ValidatorController">
 		<input type="text" maxlength="20" ng-model="ssn">
 		<button ng-click="validate();">Validate</button>
+		<div ng-show="validSsn && submitted && !serverError">
+			Valid ssn for country {{country}}
+		</div>
+		<div ng-show="!validSsn && submitted && !serverError">
+			Invalid ssn for country {{country}}
+		</div>
 		<div ng-show="serverError">
 			Server responses with error.
 		</div>

@@ -4,22 +4,22 @@ angular.module('app')
       var serverUrl = 'http://localhost:8081/rest/ssn/validation/';
 
       $scope.validate = function() {
-        $scope.serverError = false;
-
         console.log("Validating ssn: " + $scope.ssn);
 
+        $scope.serverError = false;
         $http.get(serverUrl + $scope.ssn).
-            success(handleOK).
-            error(handleError);
+            success(responseCallback).
+            error(errorCallback);
 
-        function handleError(data) {
+        function errorCallback(data) {
           console.log("Error from server");
           $scope.serverError = true;
         }
 
-        function handleOK(data) {
+        function responseCallback(data) {
           console.log("Server responses OK");
-          $scope.valid = data.valid;
+          $scope.submitted = true;
+          $scope.validSsn = data.valid;
           $scope.country = data.country;
         }
       };
