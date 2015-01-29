@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Static</title>
+<title>SSN Validator</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.0.3/css/bootstrap.min.css"/>
 <link href="/style/jumbotron-narrow.css" rel="stylesheet">
@@ -10,16 +10,18 @@
 <body ng-app="app">
 <div class="container">
 	<div class="jumbotron" ng-controller="ValidatorController">
-		<input type="text" maxlength="20" ng-model="ssn">
-		<button ng-click="validate();">Validate</button>
-		<div ng-show="validSsn && submitted && !serverError">
-			Valid ssn for country {{country}}
+
+		<input type="text" maxlength="15" placeholder="Enter SSN" ng-model="ssn">
+		<button class="btn-default" ng-click="validate();">Validate</button>
+
+		<div ng-show="validSsn && submitted && !serverError" class="text-success">
+			<h3>Valid ssn for country {{country}}</h3>
 		</div>
-		<div ng-show="!validSsn && submitted && !serverError">
-			Invalid ssn for country {{country}}
+		<div ng-show="!validSsn && submitted && !serverError" class="text-warning">
+			<h3>Invalid ssn for country {{country}}</h3>
 		</div>
-		<div ng-show="serverError">
-			Server responses with error.
+		<div ng-show="serverError" class="text-danger">
+			<h3>Server responses with error.</h3>
 		</div>
 	</div>
 </div>
