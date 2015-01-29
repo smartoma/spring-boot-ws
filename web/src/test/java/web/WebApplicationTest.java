@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package sample.ui;
+package web;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -35,7 +35,7 @@ import static org.springframework.http.HttpStatus.OK;
 @WebAppConfiguration
 @IntegrationTest("server.port=8080")
 @DirtiesContext
-public class SampleWebStaticApplicationTests {
+public class WebApplicationTest {
 
 	@Test
 	public void indexPage_HasCorrect_Title() throws Exception {
