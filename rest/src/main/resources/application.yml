@@ -1,3 +1,6 @@
+# Oppgave 3.
+# Man skal lage yml-filer for hver profil (se,fi). Dette er "default", og trenges ikke å endre.
+# Husk at server.port skal være 8081 i alle profiler. Verdien til 'Country' skal variere.
 server:
     port: 8081
 country: Norway

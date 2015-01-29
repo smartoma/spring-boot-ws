@@ -1,32 +1,32 @@
 package rest;
 
-import no.kantega.id.fin.FinnishIdNumber;
 import no.kantega.id.no.NorwegianIdNumber;
-import no.kantega.id.se.SwedishIdNumber;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 import static no.kantega.id.no.NorwegianIdNumber.forId;
 
-@Configuration
+/**
+ * Oppgave 2.
+ * Her lager man validator-tjenesten.
+ * Din jobb er å få Spring til å forstå at vi lager Spring-beans her.
+ * Rør ikke på @Profile-annotering !
+ * Nøkkelord:
+ * - @Configuration
+ * - @Bean
+ */
 public class SsnValidatorConfiguration {
 
     @Profile("default")
-    @Bean
     public SsnValidator defaultValidator() {
         return ssn -> forId(ssn).isValid(NorwegianIdNumber::valid);
     }
 
-    @Profile("fi")
-    @Bean
-    public SsnValidator finnishValidator() {
-        return ssn -> forId(ssn).isValid(FinnishIdNumber::valid);
-    }
-
-    @Profile("se")
-    @Bean
-    public SsnValidator swedishValidator() {
-        return ssn -> forId(ssn).isValid(SwedishIdNumber::valid);
-    }
+    /**
+     * Oppgave 3.
+     * Her skal du lage 2 ekstra implementasjoner av SsnValidator, og markere dem
+     * etter profilnavn (fi, se). Funksjonalitet for hver validator skal tilsvare
+     * personnummer validering for ethvert land.
+     * Nøkkelord:
+     * - @Profile
+     */
 }

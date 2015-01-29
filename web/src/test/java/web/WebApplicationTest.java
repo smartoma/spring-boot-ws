@@ -42,7 +42,7 @@ public class WebApplicationTest {
 		ResponseEntity<String> entity = new TestRestTemplate().getForEntity("http://localhost:8080", String.class);
 		assertEquals(OK, entity.getStatusCode());
 		assertTrue("Wrong body (title doesn't match):\n" + entity.getBody(),
-			entity.getBody().contains("<title>SSN Validator</title>"));
+			entity.getBody().contains("<title></title>"));
 	}
 
 }
