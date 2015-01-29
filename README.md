@@ -30,7 +30,7 @@ Oppgaver
    - Aktivering av profil kan gjøres med system.prop som heter *spring.profiles.active*
    - Det er også mulig å bruke miljø-variabler for aktivering.
    - Kjør applikasjonen som før, og test at ulike profiler virker.
-   - Gyldige personnummer til Finland for testing: 270274-885N, 111243-1335, 221087-1374
+   - Gyldige personnummer i Finland for testing: 270274-885N, 111243-1335, 221087-1374
    - For Sverige: 080618+8934,920229-7769,080625+9586
 
 4. Legg til Spring actuator, bonus oppgave.
